@@ -8,7 +8,7 @@ Each scenario is designed to help you understand and apply SRP by breaking down 
 
 ## Available Scenarios
 
-### 1. [📧 Email Service](./email_services/README.md)
+### 1. [📧 Email Service](./email_service/README.md)
 Build an email service with separate components for:
 - Email composition with templates
 - Email validation
