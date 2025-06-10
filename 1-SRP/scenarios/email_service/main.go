@@ -5,6 +5,11 @@ import (
 
 	"github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/config"
 	"github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services"
+	attachmentemailservice "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services/email/attachment"
+	composeremailservice "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services/email/composer"
+	loggeremailservice "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services/email/logger"
+	senderemailservice "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services/email/sender"
+	validatoremailservice "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services/email/validator"
 )
 
 func main() {
@@ -13,11 +18,11 @@ func main() {
 	}
 
 	services := services.NewEmailService(
-		services.NewEmailValidator(),
-		services.NewEmailComposer(),
-		services.NewEmailSender(),
-		services.NewEmailLogger(),
-		services.NewEmailAttachment(),
+		validatoremailservice.NewEmailValidator(),
+		composeremailservice.NewEmailComposer(),
+		senderemailservice.NewEmailSender(),
+		loggeremailservice.NewEmailLogger(),
+		attachmentemailservice.NewEmailAttachment(),
 	)
 
 	services.Send(

@@ -1,4 +1,4 @@
-package services
+package composeremailservice
 
 import (
 	"strings"

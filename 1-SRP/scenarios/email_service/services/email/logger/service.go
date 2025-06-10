@@ -1,8 +1,6 @@
-package services
+package loggeremailservice
 
-import (
-	"github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/interfaces"
-)
+import "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/interfaces"
 
 type EmailLogger struct{}
 
