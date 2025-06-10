@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/config"
-	"github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services"
+	emailservices "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services/email"
 	attachmentemailservice "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services/email/attachment"
 	composeremailservice "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services/email/composer"
 	loggeremailservice "github.com/lfcifuentes/go-solid/1-SRP/scenarios/email_service/services/email/logger"
@@ -17,7 +17,7 @@ func main() {
 		log.Fatalf("Error loading config: %v", err)
 	}
 
-	services := services.NewEmailService(
+	service := emailservices.NewEmailService(
 		validatoremailservice.NewEmailValidator(),
 		composeremailservice.NewEmailComposer(),
 		senderemailservice.NewEmailSender(),
@@ -25,7 +25,7 @@ func main() {
 		attachmentemailservice.NewEmailAttachment(),
 	)
 
-	services.Send(
+	service.Send(
 		"Test Subject",
 		"Test Body",
 		[]string{"recipient@example.com"},
