@@ -1,0 +1,4 @@
+email:
+  from: "noreply@example.com"
+  charset: "UTF-8"
+  max_to: 100
